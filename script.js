@@ -42,7 +42,7 @@ var dict = {
 
 function showWordDefinitionLocal() {
   const wordDefContainer = document.getElementById("textContainer");
-  const wordExplanation = localStorage.getItem(`definition_${inputWord}`);
+  const wordExplanation = localStorage.getItem(inputWord);
   const fiedWordExplanation = `
 <div class="card">
 <div class="card-body">
@@ -83,6 +83,8 @@ function readNewWordDefinition() {
 
 function saveNewWordDefinition() {
   readNewWordDefinition();
+  console.log("newWord:", newWord);
+  console.log("newDef:", newDef);
   localStorage.setItem(`definition_${newWord}`, newDef);
 }
 
