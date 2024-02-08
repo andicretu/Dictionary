@@ -65,6 +65,7 @@ function showWordDefinitionDict() {
 }
 
 function showNewWordContainer() {
+  newWord = inputWord;
   const wordDefContainer = document.getElementById("textContainer");
   const fiedNewDefinition = `
 <div class="input-group mb-3">
@@ -72,7 +73,9 @@ function showNewWordContainer() {
   <input type="text" class="form-control" placeholder="Please input new word definition" aria-label="Example text with button addon" aria-describedby="button-addon2" id="userDefinition">
 </div>`;
   wordDefContainer.innerHTML = fiedNewDefinition;
-  newWord = inputWord;
+    document.getElementById('button-addon2').addEventListener('click', function() {
+    saveNewWordDefinition();
+  })
 }
 
 function readNewWordDefinition() {
@@ -92,7 +95,3 @@ function saveNewWordDefinition() {
     readInput()
     checkInputWord()
   });
-
-  document.getElementById('button-addon2').addEventListener('click', function() {
-    saveNewWordDefinition();
-  })
