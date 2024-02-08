@@ -1,5 +1,4 @@
 let inputWord;
-let newWord;
 let newDef;
 
 function readInput() {
@@ -65,30 +64,40 @@ function showWordDefinitionDict() {
 }
 
 function showNewWordContainer() {
-  newWord = inputWord;
   const wordDefContainer = document.getElementById("textContainer");
   const fiedNewDefinition = `
 <div class="input-group mb-3">
   <button class="btn btn-outline-primary" type="button" id="button-addon2">Save New word definition</button>
   <input type="text" class="form-control" placeholder="Please input new word definition" aria-label="Example text with button addon" aria-describedby="button-addon2" id="userDefinition">
 </div>`;
+
   wordDefContainer.innerHTML = fiedNewDefinition;
-    document.getElementById('button-addon2').addEventListener('click', function() {
-    saveNewWordDefinition();
-  })
+  readNewWordDefinition();
 }
 
 function readNewWordDefinition() {
   const defElement = document.getElementById('userDefinition');
   const defText = defElement.value;
   newDef = defText;
+  document.getElementById('button-addon2').addEventListener('click', function() {
+    saveNewWordDefinition();
+  })
 }
 
 function saveNewWordDefinition() {
   readNewWordDefinition();
-  console.log("newWord:", newWord);
-  console.log("newDef:", newDef);
-  localStorage.setItem(`definition_${newWord}`, newDef);
+  localStorage.setItem(`${inputWord}`, newDef);
+  displaySaveMessage();
+}
+
+function displaySaveMessage() {
+  const saveElement = document.getElementById('saveMessage');
+  const saveMessage = `
+  <div class="alert alert-success" role="alert">
+  New word definition saved!
+</div>`;
+  saveElement.innerHTML = saveMessage;
+  clearInterval.buttonHTMLNewWord;
 }
 
   document.getElementById('button-addon1').addEventListener('click', function() {
