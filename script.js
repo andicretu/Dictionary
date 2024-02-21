@@ -62,7 +62,7 @@ function saveNewWordDefinition() {
 
 function displaySaveMessage() {
   let saveElement = document.getElementById('saveMessage');
-  saveElement.textContent = "Definition saved succesfuly";
+  saveElement.textContent = "Definition saved succesfully";
   saveElement.style.display = 'block';
   setTimeout(function() {
     location.reload();
