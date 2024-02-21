@@ -39,18 +39,23 @@
   <button class="btn btn-outline-primary" type="button" id="button-addon1">Insert a word and click</button>
   <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="userInput">
 </div>
+<br>
   <div id="buttonContainer">
-
+    <h2><span class="badge bg-primary" id="message-area"></span></h2>
 </div>
 
 </div>
-<div id="textContainer">
-
+<div class="card">
+  <div class="card-body">
+    <div id="textContainer">
+  <div class="input-group mb-3" id="definition_area"></div>
+    <div id="newWordDefArea" style="display: none">
+    <button class="btn btn-outline-primary" id="save_button" type="button">Save New word definition</button>
+    <input type="text" class="form-control" placeholder="Please input new word definition" aria-describedby="button-addon2" id="userDefinition">
+  </div>
 </div>
-
-</div>
-<div id="saveMessage">
-
+<div style="display: none" class="alert alert-success" role="alert" id="saveMessage">
+  
 </div>
 
 
